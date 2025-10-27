@@ -36,6 +36,12 @@ class Review(models.Model):
         default=0,
     )
 
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"The title of this post is {self.title}"
+
 
 class Comment(models.Model):
     review = models.ForeignKey(
@@ -45,3 +51,9 @@ class Comment(models.Model):
     content = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.content} by {self.author}"
