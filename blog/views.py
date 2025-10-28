@@ -7,4 +7,4 @@ from .models import Review
 class ReviewList(generic.ListView):
     queryset = Review.objects.all()
     template_name = "blog/index.html"
-    paginate_by = 6
+    paginate_by = 3
