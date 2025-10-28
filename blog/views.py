@@ -6,4 +6,5 @@ from .models import Review
 # Create your views here.
 class ReviewList(generic.ListView):
     queryset = Review.objects.all()
-    template_name = "review_list.html"
+    template_name = "blog/index.html"
+    paginate_by = 6
