@@ -9,6 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 class Game(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     platform = models.CharField(max_length=200)
     release_year = models.IntegerField()
     developer = models.CharField(max_length=200)
@@ -20,6 +21,7 @@ class Game(models.Model):
 
 class Review(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="reviews"
     )
