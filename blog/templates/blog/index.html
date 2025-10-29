@@ -15,12 +15,12 @@
                   <p class="author">Author: {{ post.author }}</p>
                 </div>
               </div>
-              <a href="#" class="post-link">
-                <h2 class="card-title">{{ post.title }}</h2>
+              <a href="{% url 'review_detail' review.slug %}" class="review-link">
+                <h2 class="card-title">{{ review.title }}</h2>
               </a>
-
+              
               <hr />
-              <p class="card-text text-muted h6">{{ post.created_on}}</p>
+              <p class="card-text text-muted h6">{{ review.created_on }}</p>
             </div>
           </div>
         </div>
